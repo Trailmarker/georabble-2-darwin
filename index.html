@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>GeoRabble Darwin #2: Mining Exploration Regulation</title>
+		<title>Digital Regulatory Workflow Systems</title>
 		<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -27,17 +27,15 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown>
-					## Using spatial technology
+					## Digital regulatory
+					## workflow systems 
 					
-					## to regulate
-					
-					## mining exploration
-
-					#### GeoRabble Darwin #2
+					#### (DMIRS WA case study)
 				</section>
 				<section data-markdown>
-					this talk is about systems I helped develop at the Department of Mines, Industry Regulation
-					and Safety (DMIRS) in Western Australia from 2015 to 2017
+					relating to systems I helped develop at the Department of Mines, 
+					Industry Regulation and Safety (DMIRS) in Western Australia 
+					from 2015 to 2017
 				</section>
 				<section data-background="assets/img/mineral-house.jpg">
 					down in the East Perth State government ghetto
@@ -48,8 +46,8 @@
 					PoW-S was launched by DMIRS in March 2017
 				</section>
 				<section data-markdown>
-					PoW-S replaced old school manual processes with an online system used 
-					by mining companies to
+					PoW-S replaced existing multi-system and manual processes with 
+					a single online system used by mining companies to
 					
 					* propose exploration activities
 					* get realtime feedback
@@ -103,80 +101,76 @@
 
 					* reduce the time to assess MinEx proposals
 					* improve the proposal process for industry users
-					* reallocate staff and resources to compliance
+					* reallocate staff and resources (eg to compliance)
+				</section>
+				<section>
+					<p>many activities subject to regulation are inherently 
+					located in space: planning, mining, land use, environmental management</p>
+
+					<p class="fragment">clear communication about regulating these activities 
+						can occur in a <em>spatial view</em></p>
 				</section>
 				<section data-markdown>
-					**exploration ground disturbance activities** include drill holes and pads, tracks, costeans, 
-					campsites, core sample farms and surveys
+					**activities** and **regulatory datasets** are the inputs to business rules that
+					generate the **encumbrances** for a proposal 
 				</section>
 				<section data-markdown>
-					an exploration activity is a _spatial object_, and it has
+					#### Activities
 
-					* a geometry (point, line, polygon)
-					* an envelope (buffered hull)
-					* metadata which defines how it is processed
+					a proposed **activity** is a _spatial object_
 
-					PoW-S is about _entering exploration activities_
+					* has a geography (point, line, polygon)
+					* may have metadata affecting how it is processed
 				</section>
 				<section data-markdown>
-					DMIRS maintains a geodatabase with layers sourced from different WA agencies 
+					#### Activities 
 
-					* mining tenure and tenement data
+					eg: in PoW-S, **exploration ground disturbance activities** 
+					include drill holes and pads, tracks, costeans, campsites, core sample 
+					farms and geophysical surveys
+				</section>
+				<section data-markdown>
+					#### Regulatory datasets
+
+					* datasets maintained by a regulator or a partner agency
+					* a determining role in regulatory activity
+					* usually a spatial dataset
+					
+					(at DMIRS there were over 100 corporate spatial layers, 
+					about half were relevant to PoW-S)
+				</section>
+				<section data-markdown>
+					#### Regulatory datasets
+
+					* mining tenure and cadastral data
 					* protected flora and fauna
-					* national parks and state reserves
+					* national park boundaries
 					* heritage and sacred sites
 					* pastoral leases
 					* rivers and bodies of water
-					
-					about half of about 150 layers are relevant to PoW-S
-				</section>
-				<section data-markdown>
-					#### Mining tenure
-
-					* a proponent of MinEx activities needs to hold exploration tenure on the area to be disturbed 
-					* DMIRS has a demanding SLA on this commercially sensitive public tenure data
-					* decisions impact the stock market
 				</section>
 				<section data-background="assets/img/fortescue-native-title-hit.png">
 				</section>
 				<section data-markdown>
-					#### Encroachments
-					
-					in PoW-S, when a proposed activity intersects with a feature in a corporate layer, this 
-					is referred to as an _encroachment_
-
-					the geometry of an encroachment is fed into a PoW-S _rules engine_ which behaves 
-					differently based on the type of activity and the encroached layer
+					#### Digital regulation: end to end
 				</section>
 				<section data-markdown>
-					#### Encroachments
-
-					3 possible results of encroachment
-
-					* no impact
-					* activity must be removed or changed
-					* activity causes an _encumbrance_ needing follow-up
-				</section>
-				<section data-markdown>
-					#### Activities with no impact
-					
-					what if all activities in a proposal have no impact? 
-					
-					it is a candidate for a "low impact" assessment which can be fast-tracked
-				</section>
-				<section data-markdown>
-					#### Rejected activities
-
-					PoW-S provides two options
-
-					1. remove the problem activity
-					2. _excise_ the encroachments (clip all intersecting layers from its envelope)
-					
-					in the old process, these problems would cause entire proposals to "bounce" and 
-					need to be resubmitted
+					#### Digital regulation: proponents
+				
+				
 				</section>
 				<section>
-					<h4>Encroached and encumbered</h4>
+					<h4>Encumbrances</h4>
+			
+					<p>an <strong>encumbrance</strong> relates to a proposed activity and 
+						represents additional obligations</p>
+			
+					<p class="fragment">an encumbrance can also determine whether
+						additional information must be supplied with a proposed activity
+					</p>
+				</section>
+				<section>
+					<h4>Encumbrances</h4>
 					<table>
 						<tr>
 							<td>native title</td>
@@ -192,50 +186,77 @@
 						</tr>
 					</table>
 				</section>
+				<section data-background="assets/img/proposed-activity-outcomes.svg"></section>
 				<section data-markdown>
-					once all rejected activities in a proposal are dealt with, PoW-S generates a 
-					wizard-style _questionnaire_ so the proponent can supply the supporting 
-					information for the proposal's outstanding encumbrances, as text and attachments
-				</section>
-				<section data-markdown>
-					once the proposal is submitted and being processed for approval, encumbrances 
-					form part of the proponent's contractual obligations under any approved agreement
-				</section>
-				<section data-background="assets/img/pow-s-dataflow.svg">
-				</section>
-				<section data-markdown>
-					PoW-S was one of several spatial systems implemented by DMIRS for efficiency and rigour 
-					overseeing the mine life cycle, with others to follow
-				</section>
-				<section data-markdown>
-					#### FRS or Feature Relationship Services
-					
-					* a "spatially enabled workflow management engine"
-					* not an application, an API (no front end)
-					* recorded a network view of relationships between audited groups of features 
-					passing through DMIRS processes: proposed, approved, actual
-				</section>
-				<section data-markdown>
-					#### EAVie (Environment Assessment VIEwer)
+					#### Proponent supporting information
 
-					* one-stop shop for Environment Officers dealing with PoW-S proposals
-					* encumbrances generate pro forma contract text
-					* activities link to other systems of record via integrated services, displaying context
-					* doubled the efficiency of EOs processing proposals
+					Based on the proposal encumbrances, the proposal system generates a 
+					structured _online form_ so the proponent can supply supporting 
+					information for encumbrances, as text and attachments
 				</section>
-				<section data-background="assets/img/eavie-screenshot.png">
+				<section>
+					<h4>Low impact proposals</h4>
+				
+					<p>what if all activities in a proposal have no impact?</p>
+				
+					<p class="fragment">it is a candidate for a "low impact" assessment 
+						which can be fast-tracked</p>
 				</section>
-				<section data-background="assets/img/technologies.svg">
+				<section data-markdown>
+					#### Benefits for proponents
+
+					1. single consistent view of proposal
+					1. ETL proposal data from proponent systems
+					1. proposal can be edited in situ
+					1. instant view of (some) encumbrances on proposed activities
+					1. instant view of reasons for failure
+				</section>
+				<section>
+					<section data-markdown>
+						#### Digital regulation: assessors
+				
+					</section>
+					<section data-markdown>
+						#### Benefits for assessors
+				
+						1. integration of supporting data in a single view
+						* legal fragments
+						* levy and fee calculations
+						* administrative data
+						1. "low impact" proposals can be fast-tracked
+						1. rendering of reports back to proponents is (partly) automatic
+					</section>
+					<section data-background="assets/img/eavie-screenshot.png"></section>
+					<section data-markdown>
+						#### Assessment system example: EAVie (Environment Assessment VIEwer)
+					
+						* one-stop shop for DMIRS Environment Officers dealing with PoW-S proposals
+						* encumbrances generate pro forma contract text
+						* activities link to other systems of record via integrated services, displaying context
+						* goal was to double the efficiency of EOs processing proposals
+					</section>
+				</section>
+				<section>
+					<h4>Phased approach</h4>
+
+					<p>not everything needs to be built at once</p>
+					<p class="fragment">
+						PoW-S was one of several systems implemented by DMIRS for efficiency and rigour
+						overseeing the mine life cycle, with others to follow for more complex proposal
+						types
+					</p>
 				</section>
 				<section data-markdown>
 					#### Take away points
 
-					* spatial workflow systems differ from other spatial systems
-
-					* regulatory activity is focused forensically on data
-					and legal matters
-					
-					* productivity gains from automating regulation can be huge
+					* digital regulatory workflow systems are spatial systems
+					* based on detailed business analysis of all or some assessment factors
+					* productivity wins for both external and internal use cases
+					* huge process wins: transparency and unity
+				</section>
+				<section>
+					<section data-background="assets/img/technologies.svg"></section>
+				</section>
 				</section>
 			</div>
 		</div>
